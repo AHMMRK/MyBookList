@@ -1,14 +1,44 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MyBookList</title>
-    <link rel="stylesheet" href="./src/style.css">
-  </head>
-  <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.js"></script>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/book.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MyBookList</title>
+  <link rel="stylesheet" href="./src/style.css">
+</head>
+
+<body class="flex flex-col full max-w-[700px] items-center justify-center mx-auto">
+  <div id="header" class="flex items-center mt-7 gap-7">
+    <img src="/book.svg" alt="Logo" width="200" height="200">
+    <h1 class="text-6xl font-semibold font-sans">My<span class="text-blue-700"> Book</span> List</h1>
+  </div>
+
+  <form id="entry-container" class="bg-[rgba(100,100,100,.20)] w-full mt-5 flex flex-col p-7 gap-3 rounded-md">
+    <label for="title" class="font-medium text-blue-900">Title:</label>
+    <input class="w-full bg-gray-400 px-3 py-2.5 outline-0 border-0 rounded-xl text-white" id="title" type="text">
+    <label for="author" class="font-medium text-blue-900">Author:</label>
+    <input class="w-full bg-gray-400 px-3 py-2.5 outline-0 border-0 rounded-xl text-white" id="author" type="text">
+    <label for="isbn" class="font-medium text-blue-900">ISBN:</label>
+    <input class="w-full bg-gray-400 px-3 py-2.5 outline-0 border-0 rounded-xl text-white" id="isbn" type="text">
+    <button type="submit" id="add-btn" class="w-full bg-green-500 py-3 mt-7 rounded-2xl cursor-pointer">Add Book</button>
+  </form>
+
+  <table class="w-full border-collapse border border-gray-400 mt-3">
+    <thead>
+      <tr>
+        <th class="border-gray-300 bg-gray-200">Title:</th>
+        <th class="border-gray-300 bg-gray-200">Autor:</th>
+        <th class="border-gray-300 bg-gray-200">ISBN#</th>
+        <th class="border-gray-300 bg-gray-200"></th>
+      </tr>
+    </thead>
+    <tbody id="table-body" class="gap-5">
+
+    </tbody>
+  </table>
+  <script type="module" src="/src/main.js"></script>
+</body>
+
 </html>
